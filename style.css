@@ -1,0 +1,469 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #ffffff;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 5%;
+  background: #0066cc;
+  color: #fff;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: white;
+}
+.logo span {
+  color: #cce6ff;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+.nav-links li {
+  margin-left: 1.5rem;
+}
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 400;
+  transition: color 0.3s;
+}
+.nav-links a:hover {
+  color: #cce6ff;
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 10% auto;
+  padding: 2rem;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 400px;
+  position: relative;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 1.5rem;
+  font-weight: bold;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #000;
+}
+
+/* Auth Button */
+.btn-outline {
+  background: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-weight: 500;
+}
+
+.btn-outline:hover {
+  background: #fff;
+  color: #0066cc;
+}
+
+/* User Menu */
+.user-menu {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: white;
+}
+
+/* Hero Section */
+header {
+  background: linear-gradient(rgba(0, 102, 204, 0.8), rgba(0, 102, 204, 0.9)),
+              url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1350&q=80')
+              no-repeat center center/cover;
+  height: 100vh;
+  color: #fff;
+  text-align: center;
+  padding-top: 6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero {
+  max-width: 700px;
+  margin: auto;
+  padding: 2rem;
+}
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+.hero p {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+.btn {
+  background: #ff6b00;
+  color: #fff;
+  padding: 0.8rem 2rem;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background 0.3s;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  margin: 0.5rem;
+  display: inline-block;
+}
+.btn:hover {
+  background: #e55a00;
+  transform: translateY(-2px);
+}
+
+/* Sections */
+section {
+  padding: 5rem 10%;
+  text-align: center;
+}
+section h2 {
+  font-size: 2.5rem;
+  color: #0066cc;
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+
+/* About Section */
+#about {
+  background: #f8f9fa;
+}
+#about p {
+  font-size: 1.1rem;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.8;
+  color: #555;
+}
+
+/* Opportunities Section */
+#opportunities {
+  background: white;
+}
+
+.filter-options {
+  margin-bottom: 3rem;
+}
+
+.filter-btn {
+  background: #f4f6f8;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  margin: 0 0.5rem;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-weight: 500;
+  color: #666;
+}
+
+.filter-btn.active {
+  background: #0066cc;
+  color: white;
+  transform: scale(1.05);
+}
+
+.filter-btn:hover {
+  background: #004999;
+  color: white;
+}
+
+/* Cards */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+.card {
+  background: #f8f9fa;
+  border-radius: 12px;
+  width: 320px;
+  padding: 1.5rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+  border: 1px solid #e9ecef;
+}
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+.card img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  height: 200px;
+  object-fit: cover;
+}
+.card h3 {
+  color: #0066cc;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+.card p {
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Opportunity Cards */
+.opportunity-card {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  margin: 1.5rem 0;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  border-left: 5px solid #0066cc;
+  text-align: left;
+  transition: transform 0.3s;
+}
+
+.opportunity-card:hover {
+  transform: translateX(5px);
+}
+
+.opportunity-type {
+  background: #0066cc;
+  color: white;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  display: inline-block;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.apply-btn {
+  background: #ff6b00;
+  color: white;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 1rem;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+
+.apply-btn:hover {
+  background: #e55a00;
+  transform: translateY(-2px);
+}
+
+/* Impact Section */
+#impact {
+  background: linear-gradient(135deg, #0066cc, #004999);
+  color: white;
+}
+#impact h2 {
+  color: white;
+}
+
+.impact-stats {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+.impact-stats div {
+  text-align: center;
+}
+.impact-stats div h3 {
+  color: #ff6b00;
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+.impact-stats div p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+/* Contact Section */
+#contact {
+  background: #f8f9fa;
+}
+#contact form {
+  max-width: 500px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+input, textarea, select {
+  padding: 1rem;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: #0066cc;
+}
+button[type="submit"] {
+  background: #0066cc;
+  color: white;
+  border: none;
+  padding: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+button[type="submit"]:hover {
+  background: #004999;
+  transform: translateY(-2px);
+}
+
+/* Footer */
+footer {
+  background: #003366;
+  color: #fff;
+  text-align: center;
+  padding: 2rem;
+}
+footer p {
+  margin-bottom: 1rem;
+  opacity: 0.8;
+}
+.socials a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+  font-size: 1.5rem;
+  transition: color 0.3s;
+}
+.socials a:hover {
+  color: #ff6b00;
+  transform: scale(1.2);
+}
+
+/* Success Message */
+.success-message {
+  background: #d4edda;
+  color: #155724;
+  padding: 1rem;
+  border-radius: 8px;
+  margin: 1rem 0;
+  border: 1px solid #c3e6cb;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1001;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  font-weight: 500;
+}
+
+/* Loading state for form buttons */
+button[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+/* Fade-in animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+  
+  .hero h1 {
+    font-size: 2rem;
+  }
+  
+  .hero p {
+    font-size: 1.1rem;
+  }
+  
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .impact-stats {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  section {
+    padding: 3rem 5%;
+  }
+  
+  .filter-options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+  
+  .filter-btn {
+    margin: 0.2rem;
+    padding: 0.5rem 1rem;
+  }
+}
